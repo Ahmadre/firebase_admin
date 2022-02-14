@@ -22,8 +22,8 @@ class _AuthTokenProvider implements AuthTokenProvider {
   }
 
   @override
-  Stream<String?> get onTokenChanged {
-    var controller = StreamController<String?>();
+  Stream<Future<String>?> get onTokenChanged {
+    var controller = StreamController<Future<String>?>();
     var listener = (v) => controller.add(v);
 
     controller.onListen = () {
